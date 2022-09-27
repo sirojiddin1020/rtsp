@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script type="text/javascript" src="./jsmpeg.min.js"></script> -->
+    <script type="text/javascript" src="./jsmpeg.js"></script>
+    <style>
+        canvas {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 1200px;"><canvas style="width: 50vw;" id="video"></canvas></div>
+
+
+
+
+    <script>
+        var canvas = document.getElementById("video");
+
+
+        // stopp.addEventListener('click', async () => {
+        //     await fetch('http://192.168.0.100:3000/stop-stream?port=9999')
+        // })
+        // start.addEventListener('click', async () => {
+        //     await fetch('http://192.168.0.100:3000/start-stream?port=9999&url=rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4&key=bunny_video')
+        //     var ws = new WebSocket('ws://127.0.0.1:9999');
+        //     var player = new jsmpeg(ws, { canvas: canvas2, audio: true, autoplay: true });
+        // })
+        // var player = new jsmpeg(ws, { canvas, audio: true, autoplay: true });
+
+        var url = 'ws://127.0.0.1:9999';
+        var player = new JSMpeg.Player(url, { canvas: canvas, autoplay: true, audio: false, loop: true })
+
+        console.log(player);
+
+
+        // var ws = new WebSocket('ws://127.0.0.1:9999');
+        // var player = new jsmpeg(ws, { canvas: canvas2, audio: true, autoplay: true });
+
+    </script>
+</body>
+
+</html>
